@@ -105,7 +105,7 @@ namespace TheAionProject
         }
 
         /// <summary>
-        /// get a string value from the user
+        /// get a string value from user
         /// </summary>
         /// <returns>string value</returns>
         public string GetString()
