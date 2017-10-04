@@ -150,6 +150,8 @@ namespace TheAionProject
                 $"\tTraveler Home Planet: {gameTraveler.HomePlanet}\n" +
                 $"\tTraveler Home Planet: {gameTraveler.Greeting()}\n" +
                 " \n";
+            gameTraveler.TravelerFromEarth();
+                
 
             return messageBoxText;
         }

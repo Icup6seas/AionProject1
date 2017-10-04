@@ -114,34 +114,6 @@ namespace TheAionProject
         }
 
         /// <summary>
-        /// Validate user name input with a bool
-        /// </summary>
-        /// <param name=""></param>
-        /// <returns></returns>
-        public bool validTravelerName(string prompt)
-        {
-            bool validResponse = false;
-
-            DisplayInputBoxPrompt(prompt);
-            while (!validResponse)
-            {
-                var userInput = Console.ReadLine();
-                if (String.IsNullOrEmpty(userInput))
-                {
-                    ClearInputBox();
-                    DisplayInputErrorMessage($"You must enter valid name. Please try again.");
-                    DisplayInputBoxPrompt(prompt);
-                }
-                else
-                {
-                    validResponse = true;
-                }
-            }
-
-            return true;
-        }
-
-        /// <summary>
         /// get an integer value from the user
         /// </summary>
         /// <returns>integer value</returns>

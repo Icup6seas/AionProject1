@@ -41,7 +41,7 @@ namespace TheAionProject
 
         }
 
-        public Traveler(string name, RaceType race, int spaceTimeLocationID) : base(name, race, spaceTimeLocationID)
+        public Traveler(string name, RaceType race, int spaceTimeLocationID, string FromEarth) : base(name, race, spaceTimeLocationID,FromEarth)
         {
 
         }
@@ -51,12 +51,35 @@ namespace TheAionProject
 
         #region METHODS
 
+        public bool TravelerFromEarth()
+        {
+            bool fromEarth = false;
+
+            while (!fromEarth)
+            {
+                string userInput = Console.ReadLine().ToUpper();
+                if (userInput == "Earth")
+                {
+                    Console.WriteLine("No way! I'm from Earth too!");
+                }
+                else
+                {
+                    fromEarth = true;
+                }
+            }
+
+            return true;
+
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+        }
+
         public override string Greeting()
         {
             return $"Hello, my name is {base.Name}, I am a {Race} and I am from {HomePlanet}.";
-        }
 
-        
+            TravelerFromEarth();
+        }
 
         #endregion
     }
