@@ -13,13 +13,21 @@ namespace TheAionProject
     {
         #region ENUMERABLES
 
+        public enum ToonHeight
+        {
+            None,
+            Short,
+            Medium,
+            Tall,
+            Gigantic
+        }
 
         #endregion
 
         #region FIELDS
 
         private string _homePlanet;
-
+        private ToonHeight _height;
 
         #endregion
 
@@ -29,6 +37,12 @@ namespace TheAionProject
         {
             get { return _homePlanet; }
             set { _homePlanet = value; }
+        }
+
+        public ToonHeight Height
+        {
+            get { return _height; }
+            set { _height = value; }
         }
 
         #endregion
@@ -41,9 +55,9 @@ namespace TheAionProject
 
         }
 
-        public Traveler(string name, RaceType race, int spaceTimeLocationID) : base(name, race, spaceTimeLocationID)
+        public Traveler(string name, RaceType race, ToonHeight height, int spaceTimeLocationID) : base(name, race, spaceTimeLocationID)
         {
-
+            _height = height;
         }
 
         #endregion

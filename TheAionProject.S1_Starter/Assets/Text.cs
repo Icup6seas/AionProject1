@@ -109,6 +109,32 @@ namespace TheAionProject
             return messageBoxText;
         }
 
+        public static string InitializeMissionGetTravelerHeight(Traveler gameTraveler)
+        {
+            string messageBoxText =
+                $"{gameTraveler.Name}, it will be important for us to know your height on this mission.\n" +
+                " \n" +
+                "You want a good space suit, don't you?\n" +
+                "Enter your height below.\n" +
+                " \n" +
+                "Please use the universal height classifications below." +
+                " \n";
+
+            string heightList = null;
+
+            foreach (Traveler.ToonHeight height in Enum.GetValues(typeof(Traveler.ToonHeight)))
+            {
+                if (height != Traveler.ToonHeight.None)
+                {
+                    heightList += $"\t{height}\n";
+                }
+            }
+
+            messageBoxText += heightList;
+
+            return messageBoxText;
+        }
+
         public static string InitializeMissionGetTravelerHomePlanet(Traveler gameTraveler)
         {
             string messageBoxText =
@@ -128,6 +154,7 @@ namespace TheAionProject
                 $"\tTraveler Name: {gameTraveler.Name}\n" +
                 $"\tTraveler Age: {gameTraveler.Age}\n" +
                 $"\tTraveler Race: {gameTraveler.Race}\n" +
+                $"\tTraveler Height: {gameTraveler.Height}\n" +
                 $"\tTraveler Home Planet: {gameTraveler.HomePlanet}\n" +
                 " \n" +
                 "Press any key to begin your mission.";
@@ -147,9 +174,11 @@ namespace TheAionProject
                 $"\tTraveler Name: {gameTraveler.Name}\n" +
                 $"\tTraveler Age: {gameTraveler.Age}\n" +
                 $"\tTraveler Race: {gameTraveler.Race}\n" +
+                $"\tTraveler Height: {gameTraveler.Height}\n" +
                 $"\tTraveler Home Planet: {gameTraveler.HomePlanet}\n" +
-                $"\tTraveler Home Planet: {gameTraveler.Greeting()}\n" +
-                $"\tTraveler Home Planet: {gameTraveler.FromPlanet()}\n" +
+                $"\tTraveler Greeting: {gameTraveler.Greeting()}\n" +
+                $"\tAre you really from {gameTraveler.HomePlanet}?\n" +
+                $"\t{gameTraveler.FromPlanet()}\n" +
                 " \n";
             //gameTraveler.TravelerFromEarth();
                 

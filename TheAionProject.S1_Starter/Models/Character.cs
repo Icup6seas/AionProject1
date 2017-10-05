@@ -21,6 +21,8 @@ namespace TheAionProject
             Xantorian
         }
 
+        
+
         #endregion
 
         #region FIELDS
@@ -30,6 +32,7 @@ namespace TheAionProject
         private int _spaceTimeLocationID;
         private int _age;
         private RaceType _race;
+
         //private string _fromEarth;
 
         #endregion
@@ -65,6 +68,8 @@ namespace TheAionProject
             get { return _race; }
             set { _race = value; }
         }
+        
+        
 
         //public string FromEarth
         //{

@@ -162,6 +162,18 @@ namespace TheAionProject
         }
 
         /// <summary>
+        /// get a toons height value from the user
+        /// </summary>
+        /// <returns></returns>
+        public Traveler.ToonHeight GetHeight()
+        {
+            Traveler.ToonHeight height;
+            Enum.TryParse<Traveler.ToonHeight>(Console.ReadLine(), out height);
+
+            return height;
+        }
+
+        /// <summary>
         /// display splash screen
         /// </summary>
         /// <returns>player chooses to play</returns>
@@ -459,6 +471,13 @@ namespace TheAionProject
             DisplayGamePlayScreen("Mission Initialization - Race", Text.InitializeMissionGetTravelerRace(traveler), ActionMenu.MissionIntro, "");
             DisplayInputBoxPrompt($"Enter your race {traveler.Name}: ");
             traveler.Race = GetRace();
+
+            //
+            // get traveler's height
+            //
+            DisplayGamePlayScreen("Mission Initialization - Height", Text.InitializeMissionGetTravelerHeight(traveler), ActionMenu.MissionIntro, "");
+            DisplayInputBoxPrompt($"Enter your height {traveler.Height}: ");
+            traveler.Height = GetHeight();
 
             //
             // get traveler's home planet
