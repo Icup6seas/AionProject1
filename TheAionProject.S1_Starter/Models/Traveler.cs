@@ -41,7 +41,7 @@ namespace TheAionProject
 
         }
 
-        public Traveler(string name, RaceType race, int spaceTimeLocationID, string FromEarth) : base(name, race, spaceTimeLocationID,FromEarth)
+        public Traveler(string name, RaceType race, int spaceTimeLocationID) : base(name, race, spaceTimeLocationID)
         {
 
         }
@@ -51,36 +51,40 @@ namespace TheAionProject
 
         #region METHODS
 
-        public bool TravelerFromEarth()
-        {
-            bool fromEarth = false;
+        //public bool TravelerFromEarth()
+        //{
+        //    bool fromEarth = false;
 
-            while (!fromEarth)
-            {
-                string userInput = Console.ReadLine().ToUpper();
-                if (userInput == "Earth")
-                {
-                    Console.WriteLine("No way! I'm from Earth too!");
-                }
-                else
-                {
-                    fromEarth = true;
-                }
-            }
+        //    while (!fromEarth)
+        //    {
+        //        string userInput = Console.ReadLine().ToUpper();
+        //        if (userInput == "Earth")
+        //        {
+        //            Console.WriteLine("No way! I'm from Earth too!");
+        //        }
+        //        else
+        //        {
+        //            fromEarth = true;
+        //        }
+        //    }
 
-            return true;
+        //    return true;
 
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
-        }
+        //    Console.WriteLine("Press any key to continue...");
+        //    Console.ReadKey();
+        //}
 
         public override string Greeting()
         {
             return $"Hello, my name is {base.Name}, I am a {Race} and I am from {HomePlanet}.";
 
-            TravelerFromEarth();
+            //TravelerFromEarth();
         }
 
+        public override string FromPlanet()
+        {
+            return ($"Yes...I said {HomePlanet}");
+        }
         #endregion
     }
 }

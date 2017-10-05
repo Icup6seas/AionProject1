@@ -26,10 +26,11 @@ namespace TheAionProject
         #region FIELDS
 
         private string _name;
+        private string _planet;
         private int _spaceTimeLocationID;
         private int _age;
         private RaceType _race;
-        private string _fromEarth;
+        //private string _fromEarth;
 
         #endregion
 
@@ -47,6 +48,12 @@ namespace TheAionProject
             set { _spaceTimeLocationID = value; }
         }
 
+        public string Planet
+        {
+            get { return _planet; }
+            set { _planet = value; }
+        }
+
         public int Age
         {
             get { return _age; }
@@ -59,11 +66,11 @@ namespace TheAionProject
             set { _race = value; }
         }
 
-        public string FromEarth
-        {
-            get { return _fromEarth; }
-            set { _fromEarth = value; }
-        }
+        //public string FromEarth
+        //{
+        //    get { return _fromEarth; }
+        //    set { _fromEarth = value; }
+        //}
 
         #endregion
 
@@ -74,12 +81,13 @@ namespace TheAionProject
 
         }
 
-        public Character(string name, RaceType race, int spaceTimeLocationID, string FromEarth)
+        public Character(string name, RaceType race, int spaceTimeLocationID)
         {
             _name = name;
             _race = race;
             _spaceTimeLocationID = spaceTimeLocationID;
-            _fromEarth = FromEarth;
+            _planet = Planet;
+            //_fromEarth = FromEarth;
         }
 
         #endregion
@@ -90,6 +98,11 @@ namespace TheAionProject
         {
             
             return $"Hello, my name is {_name} and I am a {_race}.";
+        }
+
+        public virtual string FromPlanet()
+        {
+            return $"I am from the plant {_planet}.";
         }
 
         #endregion

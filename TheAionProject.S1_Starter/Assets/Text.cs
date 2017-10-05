@@ -149,8 +149,9 @@ namespace TheAionProject
                 $"\tTraveler Race: {gameTraveler.Race}\n" +
                 $"\tTraveler Home Planet: {gameTraveler.HomePlanet}\n" +
                 $"\tTraveler Home Planet: {gameTraveler.Greeting()}\n" +
+                $"\tTraveler Home Planet: {gameTraveler.FromPlanet()}\n" +
                 " \n";
-            gameTraveler.TravelerFromEarth();
+            //gameTraveler.TravelerFromEarth();
                 
 
             return messageBoxText;
